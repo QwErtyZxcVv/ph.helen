@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lena Kostetska — Photographer & Visual Creator</title>
+  <meta name="description" content="Editorial, portrait and commercial photography in Kaunas, Lithuania. Cinematic images shaped around mood, light and story.">
+  <meta name="theme-color" content="#0c0c0e">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      color-scheme: dark;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0c0c0e;
+      background-image: radial-gradient(ellipse at 78% 12%, rgba(63, 55, 48, 0.16), transparent 34rem);
+      color: #e4e4e7;
+    }
+
+    .font-serif-custom {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    :focus-visible {
+      outline: 1px solid #d4d4d8;
+      outline-offset: 4px;
+    }
+
+    .hero-frame {
+      isolation: isolate;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero-frame::after {
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      content: "";
+      pointer-events: none;
+    }
+
+    .hero-frame img {
+      transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .hero-frame:hover img {
+      transform: scale(1.025);
+    }
+
+    .img-zoom {
+      transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .img-card:hover .img-zoom {
+      transform: scale(1.04);
+    }
+
+    .img-card {
+      transition: border-color 0.35s ease;
+    }
+
+    .img-card:hover {
+      border-color: #52525b;
+    }
+
+    @media (hover: none) {
+      .portfolio-caption {
+        opacity: 1;
+      }
+    }
+
+    .tab-btn.active {
+      color: #ffffff;
+      border-bottom: 1px solid #ffffff;
+    }
+
+    .lang-btn.active {
+      color: #ffffff;
+      font-weight: 500;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      :root {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-neutral-800 selection:text-white">
+
+  <!-- Header / Navigation -->
+  <header class="fixed top-0 left-0 w-full z-40 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-900/60 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+      <a href="#" class="text-base sm:text-xl font-serif-custom tracking-widest text-white uppercase font-light">
+        Lena Kostetska
+      </a>
+      
+      <nav class="hidden md:flex space-x-10 text-xs tracking-widest uppercase text-neutral-400 font-light">
+        <a href="#about" data-i18n="nav_about" class="hover:text-white transition">About</a>
+        <a href="#portfolio" data-i18n="nav_portfolio" class="hover:text-white transition">Portfolio</a>
+        <a href="#packages" data-i18n="nav_services" class="hover:text-white transition">Services</a>
+      </nav>
+
+      <div class="flex items-center space-x-3 sm:space-x-6">
+        <!-- Language Switcher -->
+        <div class="flex items-center space-x-2 text-xs text-neutral-400 font-light tracking-wider border-r border-neutral-800 pr-4">
+          <button onclick="setLanguage('en')" id="btn-en" class="lang-btn active hover:text-white transition">EN</button>
+          <span>/</span>
+          <button onclick="setLanguage('ru')" id="btn-ru" class="lang-btn hover:text-white transition">RU</button>
+        </div>
+
+        <a href="#contact" data-i18n="nav_book" class="px-3 sm:px-5 py-2 border border-neutral-700 hover:border-white text-[10px] sm:text-xs tracking-widest uppercase text-white transition rounded-none whitespace-nowrap">
+          Book Session
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="about" class="min-h-screen pt-28 pb-16 px-6 flex flex-col justify-center max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <div class="lg:col-span-7 space-y-6">
+        <span class="text-xs uppercase tracking-widest text-neutral-400 font-light" data-i18n="hero_loc">Kaunas, Lithuania</span>
+        <h1 class="text-5xl sm:text-7xl lg:text-8xl font-serif-custom font-light text-white leading-tight">
+          <span data-i18n="hero_t1">Emotions.</span> <br>
+          <span data-i18n="hero_t2">Moments.</span> <br>
+          <span class="italic font-normal" data-i18n="hero_t3">Your Film.</span>
+        </h1>
+        <p class="max-w-md text-sm text-neutral-400 font-light leading-relaxed pt-4" data-i18n="hero_desc">
+          Editorial, individual, and commercial photography focused on raw mood, cinematic lighting, and timeless aesthetics.
+        </p>
+        
+        <div class="pt-6 flex items-center space-x-6">
+          <a href="#portfolio" data-i18n="hero_btn_works" class="px-8 py-3.5 bg-white text-black text-xs uppercase tracking-widest font-medium hover:bg-neutral-200 transition">
+            View Works
+          </a>
+          <a href="#contact" class="text-xs uppercase tracking-widest text-neutral-300 hover:text-white transition flex items-center gap-2">
+            <span data-i18n="hero_btn_touch">Get in touch</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Главное фото в первом блоке -->
+      <div class="lg:col-span-5">
+        <div class="hero-frame relative overflow-hidden aspect-[3/4] bg-neutral-900 border border-neutral-800">
+          <img src="img/Photo1.jpg" alt="Lena Kostetska" fetchpriority="high" decoding="async" class="w-full h-full object-cover">
+          <div class="absolute bottom-6 left-6 bg-neutral-950/80 backdrop-blur-sm px-3 py-2 border border-neutral-700/80 text-[10px] tracking-widest uppercase text-neutral-200" data-i18n="hero_badge">
+            Photographer · Kaunas
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="py-24 px-6 border-t border-neutral-900 max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div>
+        <span class="text-xs uppercase tracking-widest text-neutral-400 font-light" data-i18n="port_sub">Curated Portfolio</span>
+        <h2 class="text-3xl sm:text-4xl font-serif-custom font-light text-white mt-2" data-i18n="port_title">Selected Series</h2>
+      </div>
+      
+      <!-- Category Filter -->
+      <div class="flex flex-wrap gap-6 mt-6 md:mt-0 text-xs tracking-widest uppercase text-neutral-400 font-light">
+        <button class="tab-btn active pb-1 transition" onclick="filterCategory('all', this)" data-i18n="cat_all">All</button>
+        <button class="tab-btn pb-1 transition hover:text-white" onclick="filterCategory('individual', this)" data-i18n="cat_ind">Individual</button>
+        <button class="tab-btn pb-1 transition hover:text-white" onclick="filterCategory('brands', this)" data-i18n="cat_brand">Brands</button>
+        <button class="tab-btn pb-1 transition hover:text-white" onclick="filterCategory('events', this)" data-i18n="cat_event">Events</button>
+      </div>
+    </div>
+
+    <!-- Image Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="img-card group relative aspect-[3/4] bg-neutral-900 overflow-hidden cursor-pointer border border-neutral-900" data-category="individual">
+        <img src="img/Photo1.jpg" alt="Editorial Shoot" loading="lazy" decoding="async" class="img-zoom w-full h-full object-cover">
+        <div class="portfolio-caption absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent opacity-0 group-hover:opacity-100 transition duration-300 p-6 flex flex-col justify-end">
+          <span class="text-[10px] tracking-widest uppercase text-neutral-400" data-i18n="cat_ind">Individual</span>
+          <h3 class="text-lg font-serif-custom text-white">MIB Concept</h3>
+        </div>
+      </div>
+
+      <div class="img-card group relative aspect-[3/4] bg-neutral-900 overflow-hidden cursor-pointer border border-neutral-900" data-category="individual">
+        <img src="img/Photo2.jpg" alt="Atmospheric Portrait" loading="lazy" decoding="async" class="img-zoom w-full h-full object-cover">
+        <div class="portfolio-caption absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent opacity-0 group-hover:opacity-100 transition duration-300 p-6 flex flex-col justify-end">
+          <span class="text-[10px] tracking-widest uppercase text-neutral-400" data-i18n="cat_ind">Individual</span>
+          <h3 class="text-lg font-serif-custom text-white">Morning Stories</h3>
+        </div>
+      </div>
+
+      <div class="img-card group relative aspect-[3/4] bg-neutral-900 overflow-hidden cursor-pointer border border-neutral-900" data-category="individual">
+        <img src="img/Photo3.jpg" alt="Street Cinematic" loading="lazy" decoding="async" class="img-zoom w-full h-full object-cover">
+        <div class="portfolio-caption absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent opacity-0 group-hover:opacity-100 transition duration-300 p-6 flex flex-col justify-end">
+          <span class="text-[10px] tracking-widest uppercase text-neutral-400" data-i18n="cat_ind">Individual</span>
+          <h3 class="text-lg font-serif-custom text-white">City Mood</h3>
+        </div>
+      </div>
+
+      <div class="img-card group relative aspect-[3/4] bg-neutral-900 overflow-hidden cursor-pointer border border-neutral-900" data-category="brands">
+        <img src="img/Photo4.jpg" alt="Commercial Concept" loading="lazy" decoding="async" class="img-zoom w-full h-full object-cover">
+        <div class="portfolio-caption absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent opacity-0 group-hover:opacity-100 transition duration-300 p-6 flex flex-col justify-end">
+          <span class="text-[10px] tracking-widest uppercase text-neutral-400" data-i18n="cat_brand">Brands</span>
+          <h3 class="text-lg font-serif-custom text-white">Editorial Fashion</h3>
+        </div>
+      </div>
+
+      <div class="img-card group relative aspect-[3/4] bg-neutral-900 overflow-hidden cursor-pointer border border-neutral-900" data-category="events">
+        <img src="img/Photo5.jpg" alt="Portrait Work" loading="lazy" decoding="async" class="img-zoom w-full h-full object-cover">
+        <div class="portfolio-caption absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent opacity-0 group-hover:opacity-100 transition duration-300 p-6 flex flex-col justify-end">
+          <span class="text-[10px] tracking-widest uppercase text-neutral-400" data-i18n="cat_event">Events / Creative</span>
+          <h3 class="text-lg font-serif-custom text-white">Wild Aesthetics</h3>
+        </div>
+      </div>
+
+      <div class="img-card group relative aspect-[3/4] bg-neutral-900 overflow-hidden cursor-pointer border border-neutral-900" data-category="individual">
+        <img src="img/Photo6.jpg" alt="Monochrome Portrait" loading="lazy" decoding="async" class="img-zoom w-full h-full object-cover">
+        <div class="portfolio-caption absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent opacity-0 group-hover:opacity-100 transition duration-300 p-6 flex flex-col justify-end">
+          <span class="text-[10px] tracking-widest uppercase text-neutral-400" data-i18n="cat_ind">Individual</span>
+          <h3 class="text-lg font-serif-custom text-white">Black & White Film</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages Section -->
+  <section id="packages" class="py-24 px-6 border-t border-neutral-900 bg-neutral-950/50">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-widest text-neutral-400 font-light" data-i18n="pkg_sub">Investment</span>
+        <h2 class="text-3xl sm:text-4xl font-serif-custom font-light text-white mt-2" data-i18n="pkg_title">Services & Pricing</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="p-8 border border-neutral-800 bg-neutral-900/30 flex flex-col justify-between space-y-8">
+          <div>
+            <span class="text-xs uppercase tracking-widest text-neutral-400" data-i18n="p1_tag">Essential</span>
+            <h3 class="text-2xl font-serif-custom text-white mt-2" data-i18n="p1_name">Individual Session</h3>
+            <p class="text-3xl font-light text-white mt-4">120 €</p>
+            <ul class="mt-6 space-y-3 text-xs text-neutral-400 font-light leading-relaxed">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neutral-200"></i> <span data-i18n="p1_f1">1 Hour Studio or Location</span></li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neutral-200"></i> <span data-i18n="p1_f2">Moodboard & Outfit Help</span></li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neutral-200"></i> <span data-i18n="p1_f3">20 Retouched HD Photos</span></li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neutral-200"></i> <span data-i18n="p1_f4">Online Gallery Access</span></li>
+            </ul>
+          </div>
+          <a href="#contact" data-i18n="btn_book" class="w-full text-center py-3 border border-neutral-700 hover:border-white text-xs uppercase tracking-widest text-white transition">Book Option</a>
+        </div>
+
+        <div class="p-8 border border-white bg-neutral-900/80 flex flex-col justify-between space-y-8 relative">
+          <div class="absolute -top-3 right-6 bg-white text-black px-3 py-0.5 text-[9px] uppercase tracking-widest font-medium" data-i18n="p2_badge">Popular</div>
+          <div>
+            <span class="text-xs uppercase tracking-widest text-neutral-400" data-i18n="p2_tag">Commercial</span>
+            <h3 class="text-2xl font-serif-custom text-white mt-2" data-i18n="p2_name">Brands & Content</h3>
+            <p class="text-3xl font-light text-white mt-4">250 €</p>
+            <ul class="mt-6 space-y-3 text-xs text-neutral-300 font-light leading-relaxed">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-white"></i> <span data-i18n="p2_f1">Up to 3 Hours Shooting</span></li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-white"></i> <span data-i18n="p2_f2">Full Concept Development</span></li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-white"></i> <span data-i18n="p2_f3">40 Retouched + All RAWs</span></li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-white"></i> <span data-i18n="p2_f4">Short Reel Video Content</span></li>
+            </ul>
+          </div>
+          <a href="#contact" data-i18n="btn_book" class="w-full text-center py-3 bg-white text-black text-xs uppercase tracking-widest font-medium hover:bg-neutral-200 transition">Book Option</a>
+        </div>
+
+        <div class="p-8 border border-neutral-800 bg-neutral-900/30 flex flex-col justify-between space-y-8">
+          <div>
+            <span class="text-xs uppercase tracking-widest text-neutral-400" data-i18n="p3_tag">Tailored</span>
+            <h3 class="text-2xl font-serif-custom text-white mt-2" data-i18n="p3_name">Events & Shows</h3>
+            <p class="text-3xl font-light text-white mt-4" data-i18n="p3_price">Custom</p>
+            <ul class="mt-6 space-y-3 text-xs text-neutral-400 font-light leading-relaxed">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neutral-200"></i> <span data-i18n="p3_f1">Event Coverage & Backstage</span></li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neutral-200"></i> <span data-i18n="p3_f2">Fast 48h Delivery</span></li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neutral-200"></i> <span data-i18n="p3_f3">Commercial Usage Rights</span></li>
+            </ul>
+          </div>
+          <a href="#contact" data-i18n="p3_btn" class="w-full text-center py-3 border border-neutral-700 hover:border-white text-xs uppercase tracking-widest text-white transition">Inquire Now</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 px-6 border-t border-neutral-900 max-w-4xl mx-auto text-center">
+    <span class="text-xs uppercase tracking-widest text-neutral-400 font-light" data-i18n="cnt_sub">Get In Touch</span>
+    <h2 class="text-4xl sm:text-6xl font-serif-custom font-light text-white mt-4 mb-8" data-i18n="cnt_title">Let's Create Together</h2>
+    <p class="text-sm text-neutral-400 font-light max-w-md mx-auto mb-10" data-i18n="cnt_desc">
+      Available for sessions in Kaunas, Lithuania and international travel. Direct booking via Telegram or Instagram.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="https://t.me/elenakostetskayaa" target="_blank" rel="noopener noreferrer" class="px-8 py-3.5 bg-neutral-900 border border-neutral-800 hover:border-white text-xs uppercase tracking-widest text-white transition flex items-center gap-2">
+        <i data-lucide="send" class="w-4 h-4"></i> Telegram
+      </a>
+      <a href="https://instagram.com/ph.helenn" target="_blank" rel="noopener noreferrer" class="px-8 py-3.5 bg-neutral-900 border border-neutral-800 hover:border-white text-xs uppercase tracking-widest text-white transition flex items-center gap-2">
+        <i data-lucide="camera" class="w-4 h-4"></i> Instagram
+      </a>
+    </div>
+  </section>
+
+  <footer class="py-8 px-6 border-t border-neutral-900 text-center text-[10px] uppercase tracking-widest text-neutral-400">
+    © 2026 Lena Kostetska. All rights reserved.
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    const translations = {
+      en: {
+        nav_about: "About",
+        nav_portfolio: "Portfolio",
+        nav_services: "Services",
+        nav_book: "Book Session",
+        hero_loc: "Kaunas, Lithuania",
+        hero_t1: "Emotions.",
+        hero_t2: "Moments.",
+        hero_t3: "Your Film.",
+        hero_desc: "Editorial, individual, and commercial photography focused on raw mood, cinematic lighting, and timeless aesthetics.",
+        hero_btn_works: "View Works",
+        hero_btn_touch: "Get in touch",
+        hero_badge: "Photographer · Kaunas",
+        port_sub: "Curated Portfolio",
+        port_title: "Selected Series",
+        cat_all: "All",
+        cat_ind: "Individual",
+        cat_brand: "Brands",
+        cat_event: "Events",
+        pkg_sub: "Investment",
+        pkg_title: "Services & Pricing",
+        p1_tag: "Essential",
+        p1_name: "Individual Session",
+        p1_f1: "1 Hour Studio or Location",
+        p1_f2: "Moodboard & Outfit Help",
+        p1_f3: "20 Retouched HD Photos",
+        p1_f4: "Online Gallery Access",
+        btn_book: "Book Option",
+        p2_badge: "Popular",
+        p2_tag: "Commercial",
+        p2_name: "Brands & Content",
+        p2_f1: "Up to 3 Hours Shooting",
+        p2_f2: "Full Concept Development",
+        p2_f3: "40 Retouched + All RAWs",
+        p2_f4: "Short Reel Video Content",
+        p3_tag: "Tailored",
+        p3_name: "Events & Shows",
+        p3_price: "Custom",
+        p3_f1: "Event Coverage & Backstage",
+        p3_f2: "Fast 48h Delivery",
+        p3_f3: "Commercial Usage Rights",
+        p3_btn: "Inquire Now",
+        cnt_sub: "Get In Touch",
+        cnt_title: "Let's Create Together",
+        cnt_desc: "Available for sessions in Kaunas, Lithuania and international travel. Direct booking via Telegram or Instagram."
+      },
+      ru: {
+        nav_about: "Обо мне",
+        nav_portfolio: "Портфолио",
+        nav_services: "Услуги",
+        nav_book: "Забронировать",
+        hero_loc: "Каунас, Литва",
+        hero_t1: "Эмоции.",
+        hero_t2: "Моменты.",
+        hero_t3: "Кадры истории.",
+        hero_desc: "Индивидуальная и коммерческая съёмка. Живые эмоции, кинематографичный свет и эстетика без временных рамок.",
+        hero_btn_works: "Смотреть работы",
+        hero_btn_touch: "Написать мне",
+        hero_badge: "Фотограф · Каунас",
+        port_sub: "Портфолио",
+        port_title: "Избранные серии",
+        cat_all: "Все",
+        cat_ind: "Индивидуальные",
+        cat_brand: "Бренды",
+        cat_event: "Ивенты",
+        pkg_sub: "Прайс-лист",
+        pkg_title: "Услуги и стоимость",
+        p1_tag: "Базовый",
+        p1_name: "Индивидуальная",
+        p1_f1: "1 час (студия или улица)",
+        p1_f2: "Помощь с образами и мудборд",
+        p1_f3: "20 фото в детальной ретуши",
+        p1_f4: "Доступ к закрытой галерее",
+        btn_book: "Забронировать",
+        p2_badge: "Популярно",
+        p2_tag: "Коммерция",
+        p2_name: "Бренды и контент",
+        p2_f1: "До 3 часов съёмки",
+        p2_f2: "Разработка концепта",
+        p2_f3: "40 ретушь + все исходники",
+        p2_f4: "Короткие Reels видео",
+        p3_tag: "Индивидуальный",
+        p3_name: "Мероприятия / Ивенты",
+        p3_price: "По запросу",
+        p3_f1: "Репортаж и бэкстейдж",
+        p3_f2: "Быстрая отдача за 48 часов",
+        p3_f3: "Права на коммерческое использование",
+        p3_btn: "Узнать детали",
+        cnt_sub: "Контакты",
+        cnt_title: "Давайте создавать вместе",
+        cnt_desc: "Работаю в Каунасе и по выезду. Быстрая запись через Telegram или Instagram."
+      }
+    };
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(`btn-${lang}`).classList.add('active');
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+    }
+
+    function filterCategory(cat, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      document.querySelectorAll('.img-card').forEach(card => {
+        if (cat === 'all' || card.dataset.category === cat) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
